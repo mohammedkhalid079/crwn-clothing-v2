@@ -1,11 +1,8 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import Button from "../button/button.component";
 import "./sign-in-form.styles.scss";
-//this UserContext obj is going to give us back whatever value is passed in for the value
-import { UserContext } from "../../contexts/user.context";
 
 import {
-  createUserDocumentFromAuth,
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
@@ -21,10 +18,6 @@ const SignInForm = () => {
   console.log(isSignUpObj);
   const { email, password } = isSignUpObj;
 
-  //we are consuming(pulling) the UserContext inside the sign-in-component page.
-  // UserContext return a value
-  const { setCurrentUser } = useContext(UserContext);
-
   const resetFormFields = () => {
     setSignUpObj(defaultFormFields);
   };
@@ -32,8 +25,6 @@ const SignInForm = () => {
   const signInWithGoogle = async () => {
     const { user } = await signInWithGooglePopup();
     console.log(user);
-    await createUserDocumentFromAuth(user);
-    setCurrentUser(user);
   };
 
   const submitHandler = async (event) => {
@@ -46,7 +37,6 @@ const SignInForm = () => {
         password
       );
       console.log(user);
-      setCurrentUser(user);
 
       resetFormFields();
     } catch (error) {
