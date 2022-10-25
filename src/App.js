@@ -3,15 +3,8 @@ import "./components/category-item/category-item.styles.scss";
 import Home from "./routes/home-components/home.component";
 import Navigation from "./routes/navigation/navigation.component";
 import Authentication from "./routes/authentication/authentication.component";
-
-const Shop = () => {
-  return (
-    <section>
-      <h1>Hello i am child of Home page</h1>;
-      <Outlet />
-    </section>
-  );
-};
+import Shop from "./routes/shop/shop.component";
+import CartDropdown from "./components/cart-dropdown/cart-dropdown.component";
 
 const App = () => {
   return (
