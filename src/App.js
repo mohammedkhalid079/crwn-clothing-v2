@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import "./components/category-item/category-item.styles.scss";
+import "./components/directory-item/directory-item.styles.scss";
 import Home from "./routes/home-components/home.component";
 import Navigation from "./routes/navigation/navigation.component";
 import Authentication from "./routes/authentication/authentication.component";

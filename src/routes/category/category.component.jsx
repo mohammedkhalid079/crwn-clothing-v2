@@ -18,7 +18,7 @@ const Category = () => {
   return (
     <div className="category-container">
       {/*Note: if you used async func inside useEffect you have use some kind of safeguard 
-    so that u only render your componnt */}
+       so that u only render your componnt */}
       {products &&
         products.map((product) => (
           <ProductCard key={product.id} product={product} />
