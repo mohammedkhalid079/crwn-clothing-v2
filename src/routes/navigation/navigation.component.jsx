@@ -7,6 +7,7 @@ import { ReactComponent as CrownLogo } from "../../assets/crown.svg";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 import { CartContext } from "../../contexts/cart.context";
+//import { ProductsContext } from "../../contexts/products.context";
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
@@ -26,7 +27,15 @@ const Navigation = () => {
   //     setCartDropdown(false);
   //   } else {
   //     setCartDropdown(true);
-  //   }
+  //   }h
+  // };
+
+  //searchFields Context
+  // const { searchFields, setSearchFields } = useContext(ProductsContext);
+
+  // const onChangeSrchField = (event) => {
+  //   console.log(event.target.value);
+  //   setSearchFields(event.target.value);
   // };
 
   return (
@@ -50,6 +59,13 @@ const Navigation = () => {
               SIGN-IN
             </Link>
           )}
+          {/* <input
+            className="nav-Link"
+            type="search"
+            placeholder="search"
+            onChange={onChangeSrchField}
+            value={searchFields}
+          /> */}
           <CartIcon />
         </div>
         {isCartOpen && <CartDropdown />}
