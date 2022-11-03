@@ -3,6 +3,7 @@
 
 import { Route, Routes } from "react-router-dom";
 import CategoriesPreview from "../categories-preview/categories-preview.component";
+import Category from "../category/category.component";
 import "./shop.styles.scss";
 
 const Shop = () => {
@@ -22,6 +23,10 @@ const Shop = () => {
   return (
     <Routes>
       <Route index element={<CategoriesPreview />} />
+      {/* category is a variable. path will match to be unique string 
+      you are trying to say hey i want parameter here means can access from a Category component
+      and u say semicolon and then name of the variable*/}
+      <Route path=":category" element={<Category />} />
     </Routes>
   );
 };
