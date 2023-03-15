@@ -1,7 +1,11 @@
-import { Link } from "react-router-dom";
 import "./directory-item.styles.scss";
+import { useNavigate } from "react-router-dom";
 const DirectoryItem = ({ category }) => {
   const { imageUrl, title } = category;
+
+  const getPro = useNavigate();
+
+  const getProducts = () => getPro("/shop/" + `${title}`);
   return (
     <div className="directory-item-container">
       <div
@@ -9,11 +13,9 @@ const DirectoryItem = ({ category }) => {
         style={{ backgroundImage: `url(${imageUrl})` }}
       />
 
-      <div className="body">
-        <Link to={"/shop"}>
-          <h2>{title}</h2>
-          <p>shop Now</p>
-        </Link>
+      <div className="body" onClick={getProducts}>
+        <h2>{title}</h2>
+        <p>shop Now</p>
       </div>
     </div>
   );
